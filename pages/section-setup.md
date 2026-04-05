@@ -11,7 +11,7 @@ import { survey } from '@/setup/survey'
 
 <div class="step-label mb-1">Kurulum</div>
 
-# Ücretsiz AI Araçlar Haritası
+# Ücretsiz AI Araçları Haritası
 
 <div class="grid grid-cols-2 gap-4 mt-5">
 
@@ -34,7 +34,7 @@ import { survey } from '@/setup/survey'
 >
   <div class="font-bold text-indigo-300 mb-1">Gemini API</div>
   <div class="font-mono text-xs text-emerald-400 mb-2">aistudio.google.com</div>
-  <div class="text-gray-400 text-xs leading-relaxed">Ücretsiz katman — 1M bağlam, günde 1500 istek</div>
+  <div class="text-gray-400 text-xs leading-relaxed">Free tier — 1M context, günde 1500 istek</div>
 </div>
 
 <div
@@ -68,7 +68,7 @@ import { survey } from '@/setup/survey'
   :enter="{ opacity: 1, transition: { duration: 400, delay: 400 } }"
   class="mt-5 callout callout-green text-center text-sm text-emerald-300 font-medium"
 >
-  Hiçbirinde kredi kartı gerekmiyor
+  Hiçbiri kredi kartı istemiyor
 </div>
 
 </div>

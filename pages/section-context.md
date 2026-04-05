@@ -9,7 +9,7 @@ import { survey } from '@/setup/survey'
 
 <div v-if="survey.wantsContextOpt">
 
-<div class="step-label mb-1">Bağlam Optimizasyonu</div>
+<div class="step-label mb-1">Context Optimizasyonu</div>
 
 # grep vs jCodeMunch
 
@@ -26,8 +26,8 @@ grep -r "log_artifact" .
 
   <div class="mt-3 callout callout-red text-xs leading-relaxed">
     <div class="text-gray-300">40+ dosyada 200+ satır</div>
-    <div class="text-gray-400 mt-1">~15.000+ token tüketim</div>
-    <div class="text-gray-400 mt-1">Hangi tanım doğru? Bilinmez</div>
+    <div class="text-gray-400 mt-1">~15.000+ token tüketimi</div>
+    <div class="text-gray-400 mt-1">Hangisi doğru tanım? Belli değil</div>
     <div class="text-gray-400 mt-1">Manuel filtreleme şart</div>
   </div>
 </div>
@@ -44,7 +44,7 @@ grep -r "log_artifact" .
 
   <div class="mt-3 callout callout-green text-xs leading-relaxed">
     <div class="text-gray-300">1 sembol, doğru dosya</div>
-    <div class="text-gray-400 mt-1">~300 token tüketim</div>
+    <div class="text-gray-400 mt-1">~300 token tüketimi</div>
     <div class="text-emerald-400 mt-1">artifact_repo.py:L234 ✓</div>
     <div class="text-gray-400 mt-1">Anında, satır numaralı</div>
   </div>
@@ -56,7 +56,7 @@ grep -r "log_artifact" .
   <span class="stat-bad">15.000 token</span>
   <span class="text-gray-600 font-light text-2xl">→</span>
   <span class="stat-good">300 token</span>
-  <span class="text-gray-500 text-sm font-normal ml-2">Aynı soru. 50× daha verimli.</span>
+  <span class="text-gray-500 text-sm font-normal ml-2">Aynı soru — 50× daha verimli.</span>
 </div>
 
 </div>

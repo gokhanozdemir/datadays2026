@@ -11,7 +11,7 @@ import { survey } from '@/setup/survey'
 
 <div class="step-label mb-1">Memory Bank</div>
 
-# Dosya Dosya Ne Gidiyor?
+# Hangi Dosyaya Ne Yazılır?
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 
@@ -43,11 +43,11 @@ import { survey } from '@/setup/survey'
 
 <div v-click class="mt-4 callout callout-violet text-center text-sm text-gray-300">
   <span class="text-violet-300 font-semibold">Kural:</span>
-  <span class="ml-2">"Yeni takım arkadaşına ilk gün anlatacağın her şey memory bank'e gider."</span>
+  <span class="ml-2">"Yeni takım arkadaşına ilk gün ne anlatırsan, memory bank'e de o gider."</span>
 </div>
 
 <div v-click class="mt-3 text-center text-xs text-gray-600">
-  Obsidian backlink'leri kararları birbirine bağlar →
+  Obsidian backlink'leri kararları birbirine bağlıyor →
   <code class="text-violet-400">[[techContext]]</code>
   <code class="text-violet-400 ml-2">[[systemPatterns]]</code>
 </div>

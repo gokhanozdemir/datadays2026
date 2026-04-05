@@ -1,22 +1,37 @@
-/* ─── Cover grid background ──────────────────────────────────────────────── */
+/* ─── Global EPAM dark background ───────────────────────────────────────── */
+/* .slidev-layout {
+  background-color: #0a0a10 !important;
+} */
+
+/* ─── Cover grid background (EPAM-style teal grid) ───────────────────────── */
 .cover-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(rgba(43, 176, 195, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 176, 195, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(43, 176, 195, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 176, 195, 0.025) 1px, transparent 1px);
+  background-size:
+    96px 96px,
+    96px 96px,
+    24px 24px,
+    24px 24px;
   pointer-events: none;
 }
 
-/* Top-left glow blob on cover */
+/* Top-left glow blob on cover — EPAM teal */
 .cover-glow {
   position: absolute;
   top: -10%;
   left: -5%;
   width: 50%;
   height: 60%;
-  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(43, 176, 195, 0.1) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -132,9 +147,24 @@
   background: rgba(16, 185, 129, 0.05);
 }
 
+/* ─── EPAM logo badge (white bg so logo is visible on dark slides) ────────── */
+.epam-logo-badge {
+  display: inline-block;
+
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  line-height: 0;
+}
+
+.epam-logo-badge img {
+  display: block;
+  height: 1.4em;
+  width: auto;
+}
+
 /* ─── File tree box ──────────────────────────────────────────────────────── */
 .file-tree {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
   font-size: 0.8rem;
   line-height: 1.7;
   color: #94a3b8;
@@ -144,6 +174,14 @@
   padding: 1.1rem 1.4rem;
 }
 
-.file-tree .dir  { color: #818cf8; font-weight: 600; }
-.file-tree .file { color: #94a3b8; }
-.file-tree .hl   { color: #a78bfa; font-weight: 700; }
+.file-tree .dir {
+  color: #818cf8;
+  font-weight: 600;
+}
+.file-tree .file {
+  color: #94a3b8;
+}
+.file-tree .hl {
+  color: #a78bfa;
+  font-weight: 700;
+}

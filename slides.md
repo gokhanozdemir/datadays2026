@@ -21,9 +21,10 @@ dragPos:
   v-motion
   :initial="{ opacity: 0, y: -16 }"
   :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-  class="step-label mb-6"
+  class="step-label mb-6 flex items-center gap-2"
 >
-  EPAM × DataDays 2026
+  <span class="epam-logo-badge"><img src="./_inputs/epam-logo.png" alt="EPAM" /></span>
+  <span>× DataDays 2026</span>
 </div>
 
 <div
@@ -44,8 +45,8 @@ dragPos:
 >
   <div class="divider-accent mt-7 mb-5" />
   <p class="text-xl text-gray-400 leading-relaxed max-w-lg">
-    Ücretsiz araçlarla AI ajanları kurma<br>
-    ve onlara proje hafızası kazandırma atölyesi
+    Ücretsiz araçlarla AI agent'ları kurma<br>
+    ve onlara proje hafızası verme atölyesi
   </p>
 </div>
 
@@ -83,7 +84,7 @@ transition: fade
 >
   <div class="step-label mb-2">Sli.do</div>
   <p class="text-2xl text-gray-300 leading-relaxed">
-    Katılmak için QR'ı okutun
+    Katılmak için QR'ı tarayın
   </p>
 </div>
 
@@ -115,8 +116,8 @@ transition: fade
   class="text-center max-w-2xl"
 >
   <p class="text-3xl text-gray-300 italic leading-relaxed">
-    "Sli.do'yu bitirdik —<br>
-    şimdi <strong class="text-white not-italic">sizden</strong> öğrenmek istiyorum"
+    "Sli.do bitti —<br>
+    şimdi <strong class="text-white not-italic">sizi</strong> dinlemek istiyorum"
   </p>
 </div>
 
@@ -149,12 +150,12 @@ transition: fade
   :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
   class="text-2xl text-gray-300 italic leading-relaxed"
 >
-  "Hiç AI'dan yeni bir kod tabanını anlamasını istedikten sonra —<br>
-  onu <span class="text-white not-italic font-semibold">güvenle saçmaladığını</span> izlediniz mi?"
+  "Hiç AI'dan yeni bir codebase'i anlamasını isteyip,<br>
+  sonra onun <span class="text-white not-italic font-semibold">kendinden emin bir şekilde saçmaladığını</span> izlediniz mi?"
 </div>
 
 <div v-click class="mt-12 text-xl text-gray-500 not-italic">
-  Ben izledim. Bu atölye o günden çıkan dersleri anlatıyor.
+  Ben izledim. Bu atölye o deneyimden öğrendiklerimi anlatıyor.
 </div>
 
 </div>
@@ -191,8 +192,8 @@ layout: two-cols
 
 <v-clicks>
 
-- **Senin** kod tabanın
-- Neden o mimari kararı aldığın
+- **Senin** codebase'in
+- O mimari kararı neden aldığın
 - Şirket içi kütüphanelerin
 - Ekibin yazılı olmayan kuralları
 
@@ -201,7 +202,7 @@ layout: two-cols
 </div>
 
 <!--
-Bu bir bug değil — tasarımsal bir kısıt.
+Bu bir bug değil — tasarımın kendisi böyle.
 -->
 
 ---
@@ -216,7 +217,7 @@ transition: fade
   class="max-w-xl mx-auto"
 >
   <div class="text-4xl text-gray-300 italic leading-relaxed">
-    "İlk çözümüm: markdown notlar, parmaklar çapraz, AI iyi zar atsın diye dua."
+    "İlk çözümüm: birkaç markdown notu, dua edip, zar atarak."
   </div>
   <div class="mt-6 text-gray-600 text-right">— Ben, 3. sprint</div>
 </div>
@@ -247,13 +248,13 @@ transition: slide-up
   :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 350 } }"
   class="mt-6 text-xl text-gray-400 leading-relaxed"
 >
-  Yapılandırılmış Markdown dosyalar.<br>
-  Hem sen hem AI okur. Başka bir şey yok.
+  Yapılı birkaç Markdown dosyası.<br>
+  Hem sen okursun, hem AI. Hepsi bu.
 </div>
 
 <div v-click class="mt-10 space-y-1">
-  <div class="text-gray-500 text-base">Buna bir de cerrahi kod erişimi ekle</div>
-  <div class="text-lg text-violet-300 font-medium">→ AI artık kıdemli bir geliştirici gibi geziyor</div>
+  <div class="text-gray-500 text-base">Buna bir de surgical kod erişimi ekle</div>
+  <div class="text-lg text-violet-300 font-medium">→ AI artık kıdemli bir developer gibi davranıyor</div>
 </div>
 
 </div>
@@ -267,7 +268,7 @@ layout: section
 transition: slide-up
 ---
 
-# Haydi, Birlikte İnşa Edelim
+# Hadi Beraber Kuralım
 
 <!--
 Enerji geçişi. Dizüstü bilgisayarları açmalarını davet et.
@@ -307,7 +308,7 @@ flowchart TB
 
 <div v-click class="tool-card tool-card-emerald">
   <div class="font-bold text-emerald-300 text-sm mb-1">MLflow</div>
-  <div class="text-xs text-gray-400">Bugün birlikte gezeceğimiz gerçek dünya kodu</div>
+  <div class="text-xs text-gray-400">Bugün beraber inceleyeceğimiz gerçek bir codebase</div>
 </div>
 
 <div v-click class="mt-1 font-mono text-xs text-gray-700">github.com/mlflow/mlflow</div>
@@ -331,13 +332,13 @@ import { survey } from '@/setup/survey'
 # Fork & Clone
 
 ```bash
-# Repo'yu fork et, yerel makineye klonla
+# Repo'yu fork'la, local'e clone'la
 git clone https://github.com/YOUR-HANDLE/datadays2026-workshop
 cd datadays2026-workshop
 ```
 
 <div v-click class="mt-5 callout callout-violet text-sm text-gray-300">
-  Bu repoda memory bank iskeleti hazır — sıfırdan başlamıyoruz.
+  Repo'da memory bank iskeleti hazır geliyor — sıfırdan başlamıyoruz.
 </div>
 
 <TerminalCheatSheet v-if="survey.terminal === 'nope'" class="mt-4" />
@@ -352,11 +353,11 @@ layout: default
 
 <div class="step-label">Adım 02</div>
 
-# Bağlam Olmadan AI
+# Context'siz AI
 
 ```bash
 opencode
-> MLflow bir artifact'ı nasıl kaydediyor? Tam kod yolunu göster.
+> MLflow bir artifact'ı nasıl kaydediyor? Tam dosya yolunu göster.
 ```
 
 <div v-click class="mt-5 callout callout-red font-mono text-sm text-gray-400 leading-relaxed">
@@ -368,7 +369,7 @@ opencode
 
 <div v-click class="mt-5 flex items-center gap-4">
   <div class="stat-bad">~70.000 token</div>
-  <div class="text-gray-500 text-sm">Belirsiz cevap · Uydurulmuş referanslar · Hiç dosya yolu yok</div>
+  <div class="text-gray-500 text-sm">Belirsiz cevap · Uydurulmuş referanslar · Dosya yolu yok</div>
 </div>
 
 <!--
@@ -416,19 +417,19 @@ Veri bilimciler ve ML mühendisleri.
 ```
 
 <!--
-"5 dakikada doldurulur. Proje değişmedikçe bir daha dokunmazsın."
+"5 dakikada dolar. Proje değişmedikçe bir daha açmazsın."
 -->
 
 ---
 layout: default
 ---
 
-# AI'a Memory Bank'ini Kendin Yaptır
+# Memory Bank'i AI'a Hazırlat
 
 Klonladıktan sonra OpenCode'a bu promptu ver:
 
 ```text {monaco}
-Sen bir proje dokümantasyon uzmanısın.
+Proje dokümantasyon uzmanısın.
 Aşağıdaki repo yapısını ve README dosyasını incele.
 Sonra benim için şu dosyaları oluştur:
 
@@ -449,8 +450,8 @@ Sadece repoda gerçekten var olan bilgileri kullan, tahmin etme.
 ```
 
 <div v-click class="mt-3 callout callout-green text-sm text-gray-300">
-  Bu prompt MLflow reposu için ortalama <strong class="text-emerald-400">4.200 token</strong> harcar.
-  Bir kez üretirsin, sonsuza dek kullanırsın.
+  Bu prompt MLflow repo'su için ortalama <strong class="text-emerald-400">4.200 token</strong> harcıyor.
+  Bir kez çalıştırırsın, sonra hep kullanırsın.
 </div>
 
 <!--
@@ -461,11 +462,11 @@ Bunu canlı demo et — promptu çalıştır, oluşturulan dosyaları göster.
 layout: two-cols
 ---
 
-# Obsidian'da Nasıl Görünür
+# Obsidian'da Nasıl Duruyor
 
 <v-clicks>
 
-- Her dosya backlink ile birbirine bağlı
+- Her dosya backlink'lerle birbirine bağlı
 - Agent aynı dosyaları okuyup güncelleyebilir
 - Sen de okuyabilirsin — sade Markdown
 
@@ -483,19 +484,19 @@ layout: two-cols
 <div class="flex flex-col justify-center h-full gap-4 pl-8">
 
 <div v-click class="callout callout-violet text-sm text-gray-300 leading-relaxed">
-  Graph view'da tüm dosyalar arasındaki bağlantıları görselleştir.
-  Projeyi görsel olarak kavramak için harika.
+  Graph view'da bütün dosyaların bağlantılarını tek bakışta görürsün.
+  Projeyi kafanda oturtmak için birebir.
 </div>
 
 <div v-click class="callout callout-amber text-sm text-gray-300 leading-relaxed">
   <strong class="text-amber-300">Kural:</strong><br>
-  Yeni takım arkadaşına ilk gün anlatacağın her şey memory bank'e gider.
+  Yeni bir takım arkadaşına ilk gün anlatacağın ne varsa memory bank'e yazılır.
 </div>
 
 </div>
 
 <!--
-Obsidian'ı canlı aç, graph view'ı göster — zaman izin verirse.
+Obsidian'ı canlı aç, graph view'ı göster — vakit olursa.
 -->
 
 ---
@@ -546,11 +547,11 @@ transition: fade
 </div>
 
 <div class="text-2xl text-gray-400 mt-4 font-light tracking-wide">
-  daha ucuz &nbsp;·&nbsp; daha hızlı &nbsp;·&nbsp; halüsinasyon yok
+  daha ucuz &nbsp;·&nbsp; daha hızlı &nbsp;·&nbsp; hallucination yok
 </div>
 
 <div v-click class="mt-5 text-gray-500 text-base">
-  70.000 token → 4.800 token. Aynı soru. Çok daha iyi cevap.
+  70.000 token → 4.800 token. Aynı soru — çok daha net cevap.
 </div>
 
 <!--
@@ -586,12 +587,12 @@ transition: fade
   :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
 >
   <div class="step-label mb-4">Meydan Okuma</div>
-  <h2 class="text-4xl font-black mb-6">Dene Bakalım</h2>
+  <h2 class="text-4xl font-black mb-6">Sen Dene</h2>
 </div>
 
 <div v-click class="callout callout-violet text-left text-sm text-gray-300 leading-relaxed font-mono">
-  jCodeMunch kullanarak [projenin temel fonksiyonu]'nun nasıl<br>
-  çalıştığını <strong class="text-violet-300">tek bir dosyayı manuel açmadan</strong> bul.
+  jCodeMunch ile [projenin ana fonksiyonu]'nun nasıl<br>
+  çalıştığını <strong class="text-violet-300">hiçbir dosyayı elle açmadan</strong> bul.
 </div>
 
 <div v-click class="mt-5 text-base text-gray-400">
@@ -613,9 +614,9 @@ transition: slide-up
 
 <v-clicks>
 
-1. **Kod yazmadan önce, AI'ına anlat** — Memory bank, her sprintin ilk 5 dakikası
-2. **Az ver, iyi ver** — Cerrahi erişim her zaman "hepsini gönder"i döver
-3. **Araç değişir, bilgin kalır** — Memory bank senindir, herhangi bir AI okuyabilir
+1. **Kod yazmadan önce AI'ına anlat** — her sprint'in ilk 5 dakikası memory bank'e ayrılsın
+2. **Az ver, doğru ver** — hedefli erişim her zaman "hepsini yolla" yaklaşımını yener
+3. **Araç değişir, bilgin kalır** — memory bank senin, hangi AI olursa okur
 
 </v-clicks>
 
@@ -627,9 +628,11 @@ transition: slide-up
   :enter="{ opacity: 1, x: 0, transition: { duration: 500, delay: 200 } }"
   class="flex flex-col items-center justify-center h-full gap-5 pl-8"
 >
-  <div class="text-5xl font-black text-gradient-cool">EPAM</div>
+  <div class="bg-white rounded-xl px-5 py-3 inline-block">
+    <img src="./_inputs/epam-logo-dark-text.jpg" alt="EPAM" class="h-10 w-auto block" />
+  </div>
   <div class="text-gray-400 text-center text-base leading-relaxed">
-    AI-native mühendislikle neler yaptığımızı merak ediyorsan, konuşalım.
+    AI-native engineering tarafında neler yaptığımızı merak ediyorsan, konuşalım.
   </div>
   <div class="text-sm text-gray-600 font-mono">epam.com/careers</div>
 </div>

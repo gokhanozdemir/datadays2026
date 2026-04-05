@@ -19,7 +19,7 @@ import { survey } from '@/setup/survey'
   <div class="text-xs text-gray-600 uppercase tracking-widest mb-3">Kurulum</div>
 
 ```bash
-# Vault home'da yaşıyor
+# Vault home dizininde duruyor
 ~/memory-bank/
   ├── projectBrief.md
   ├── techContext.md
@@ -50,7 +50,7 @@ ln -s ~/memory-bank ./.memory
   </div>
 
   <div v-click class="callout callout-amber text-xs text-gray-300 mt-1">
-    Bir dosyayı güncellersen → hepsi aynı anda güncel
+    Bir dosyayı güncelle → hepsi aynı anda güncel
   </div>
 
   </div>
@@ -60,9 +60,9 @@ ln -s ~/memory-bank ./.memory
 </div>
 
 <div v-click class="mt-4 callout callout-violet text-center text-sm text-gray-300">
-  Tek bir <code class="text-violet-300">activeContext.md</code> güncellemesi,
-  tüm AI araçlarına aynı anda ulaşır.
-  <span class="text-gray-600 ml-2">Araca bağımlı değilsin — bilgi sende.</span>
+  Tek bir <code class="text-violet-300">activeContext.md</code> güncellemesi
+  bütün AI araçlarına aynı anda ulaşır.
+  <span class="text-gray-600 ml-2">Araca bağımlı değilsin — bilgi sende kalıyor.</span>
 </div>
 
 </div>
