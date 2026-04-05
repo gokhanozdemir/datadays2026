@@ -1,5 +1,6 @@
 ---
 layout: default
+transition: slide-left
 ---
 
 <script setup lang="ts">
@@ -8,13 +9,14 @@ import { survey } from '@/setup/survey'
 
 <div v-if="survey.wantsSync">
 
-# Tek Vault, Birden Fazla Ajan
+<div class="step-label mb-1">Senkronizasyon</div>
+
+# Tek Vault, Her Araç
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
 <div>
-
-## Kurulum
+  <div class="text-xs text-gray-600 uppercase tracking-widest mb-3">Kurulum</div>
 
 ```bash
 # Vault home'da yaşıyor
@@ -31,25 +33,36 @@ ln -s ~/memory-bank ./.memory
 </div>
 
 <div>
+  <div class="text-xs text-gray-600 uppercase tracking-widest mb-3">Sonuç</div>
 
-## Sonuç
+  <div class="flex flex-col gap-2">
 
-<v-clicks>
+  <div v-click class="tool-card tool-card-violet text-xs text-gray-300">
+    <strong class="text-violet-300">OpenCode</strong> — aynı dosyaları okur
+  </div>
 
-- **OpenCode** aynı dosyaları okur
-- **Cursor** aynı dosyaları okur
-- **GitHub Copilot** aynı dosyaları okur
-- Bir dosyayı güncellersen → hepsi güncel
+  <div v-click class="tool-card tool-card-indigo text-xs text-gray-300">
+    <strong class="text-indigo-300">Cursor</strong> — aynı dosyaları okur
+  </div>
 
-</v-clicks>
+  <div v-click class="tool-card text-xs text-gray-300" style="border-color:rgba(148,163,184,0.2);background:rgba(148,163,184,0.04);">
+    <strong class="text-gray-300">GitHub Copilot</strong> — aynı dosyaları okur
+  </div>
 
-<div v-click class="mt-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg text-sm text-gray-300">
-  Tek bir <code class="text-blue-300">activeContext.md</code> güncellemesi,
+  <div v-click class="callout callout-amber text-xs text-gray-300 mt-1">
+    Bir dosyayı güncellersen → hepsi aynı anda güncel
+  </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div v-click class="mt-4 callout callout-violet text-center text-sm text-gray-300">
+  Tek bir <code class="text-violet-300">activeContext.md</code> güncellemesi,
   tüm AI araçlarına aynı anda ulaşır.
-</div>
-
-</div>
-
+  <span class="text-gray-600 ml-2">Araca bağımlı değilsin — bilgi sende.</span>
 </div>
 
 </div>

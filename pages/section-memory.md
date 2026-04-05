@@ -1,5 +1,6 @@
 ---
 layout: default
+transition: slide-left
 ---
 
 <script setup lang="ts">
@@ -8,44 +9,47 @@ import { survey } from '@/setup/survey'
 
 <div v-if="survey.wantsMemoryBank">
 
-# Memory Bank Dosya Dosya
+<div class="step-label mb-1">Memory Bank</div>
 
-<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
+# Dosya Dosya Ne Gidiyor?
 
-<div class="p-4 border border-blue-500/40 rounded-xl">
-  <div class="font-bold text-blue-300 mb-2">📄 projectBrief.md</div>
-  <div class="text-gray-300">Projenin amacı, kullanıcı kitlesi, temel özellikler</div>
-  <div class="text-gray-500 text-xs mt-2">Ne yapıyoruz? Kimin için?</div>
+<div class="grid grid-cols-2 gap-4 mt-4">
+
+<div v-click class="tool-card tool-card-violet">
+  <div class="font-bold text-violet-300 mb-1 text-sm">projectBrief.md</div>
+  <div class="text-gray-300 text-xs leading-relaxed">Projenin amacı, kullanıcı kitlesi, temel özellikler</div>
+  <div class="text-gray-600 text-xs mt-2 italic">Ne yapıyoruz? Kimin için?</div>
 </div>
 
-<div class="p-4 border border-green-500/40 rounded-xl">
-  <div class="font-bold text-green-300 mb-2">⚙️ techContext.md</div>
-  <div class="text-gray-300">Stack, versiyonlar, kurulum adımları, bağımlılıklar</div>
-  <div class="text-gray-500 text-xs mt-2">Nasıl çalışır? Nasıl kurulur?</div>
+<div v-click class="tool-card tool-card-emerald">
+  <div class="font-bold text-emerald-300 mb-1 text-sm">techContext.md</div>
+  <div class="text-gray-300 text-xs leading-relaxed">Stack, versiyonlar, kurulum adımları, bağımlılıklar</div>
+  <div class="text-gray-600 text-xs mt-2 italic">Nasıl çalışır? Nasıl kurulur?</div>
 </div>
 
-<div class="p-4 border border-yellow-500/40 rounded-xl">
-  <div class="font-bold text-yellow-300 mb-2">🔄 activeContext.md</div>
-  <div class="text-gray-300">Aktif geliştirme, bilinen sorunlar, açık TODOlar</div>
-  <div class="text-gray-500 text-xs mt-2">Bugün ne yapıyoruz?</div>
+<div v-click class="tool-card tool-card-amber">
+  <div class="font-bold text-amber-300 mb-1 text-sm">activeContext.md</div>
+  <div class="text-gray-300 text-xs leading-relaxed">Aktif geliştirme, bilinen sorunlar, açık TODOlar</div>
+  <div class="text-gray-600 text-xs mt-2 italic">Bugün ne yapıyoruz?</div>
 </div>
 
-<div class="p-4 border border-purple-500/40 rounded-xl">
-  <div class="font-bold text-purple-300 mb-2">🏗️ systemPatterns.md</div>
-  <div class="text-gray-300">Mimari kararlar, kodlama kuralları, önemli patternlar</div>
-  <div class="text-gray-500 text-xs mt-2">Neden böyle yapıldı?</div>
+<div v-click class="tool-card tool-card-indigo">
+  <div class="font-bold text-indigo-300 mb-1 text-sm">systemPatterns.md</div>
+  <div class="text-gray-300 text-xs leading-relaxed">Mimari kararlar, kodlama kuralları, önemli patternlar</div>
+  <div class="text-gray-600 text-xs mt-2 italic">Neden böyle yapıldı?</div>
 </div>
 
 </div>
 
-<div v-click class="mt-4 p-4 bg-blue-900/20 border border-blue-500/30 rounded-xl text-center">
-  <span class="font-medium text-blue-300">Kural:</span>
-  <span class="text-gray-300 ml-2">"Yeni bir takım arkadaşına ilk gün anlatacağın her şey memory bank'e gider."</span>
+<div v-click class="mt-4 callout callout-violet text-center text-sm text-gray-300">
+  <span class="text-violet-300 font-semibold">Kural:</span>
+  <span class="ml-2">"Yeni takım arkadaşına ilk gün anlatacağın her şey memory bank'e gider."</span>
 </div>
 
-<div v-click class="mt-3 text-sm text-gray-400 text-center">
-  Obsidian backlink'leri: kararları dosyalar arasında birbirine bağla →
-  <code class="text-blue-300">[[techContext]]</code>
+<div v-click class="mt-3 text-center text-xs text-gray-600">
+  Obsidian backlink'leri kararları birbirine bağlar →
+  <code class="text-violet-400">[[techContext]]</code>
+  <code class="text-violet-400 ml-2">[[systemPatterns]]</code>
 </div>
 
 </div>

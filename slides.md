@@ -12,23 +12,56 @@ dragPos:
   qr: 865,370,83,100
 ---
 
-# Daha Zeki Çalış, Daha Çok Değil
+<div class="cover-grid" />
+<div class="cover-glow" />
 
-Ajanlarla Çalışmak: Ücretsiz Araçlarla AI Geliştirme Atölyesi
+<div class="flex flex-col justify-center h-full pl-2">
 
-<div class="abs-bl m-8 text-gray-400 flex items-center gap-4 text-sm">
-  <span>EPAM</span>
-  <span>·</span>
-  <span>DataDays 2026</span>
-  <span>·</span>
+<div
+  v-motion
+  :initial="{ opacity: 0, y: -16 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+  class="step-label mb-6"
+>
+  EPAM × DataDays 2026
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, x: -30 }"
+  :enter="{ opacity: 1, x: 0, transition: { duration: 650, delay: 80 } }"
+>
+  <h1 class="text-7xl font-black leading-tight tracking-tight">
+    Daha Zeki Çalış,<br>
+    <span class="text-gradient">Daha Çok Değil</span>
+  </h1>
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 18 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 550, delay: 250 } }"
+>
+  <div class="divider-accent mt-7 mb-5" />
+  <p class="text-xl text-gray-400 leading-relaxed max-w-lg">
+    Ücretsiz araçlarla AI ajanları kurma<br>
+    ve onlara proje hafızası kazandırma atölyesi
+  </p>
+</div>
+
+</div>
+
+<div class="abs-bl m-8 text-gray-600 flex items-center gap-3 text-sm font-mono">
+  <span>Gökhan Özdemir</span>
+  <span class="text-gray-700">·</span>
   <span>@gokhanozdemir</span>
 </div>
 
-<div v-drag="'qr'" class="abs-br m-8 text-center text-xs text-gray-400">
-  <div class="w-20 h-20 border-2 border-gray-400 rounded flex items-center justify-center text-gray-500 text-3xl">
+<div v-drag="'qr'" class="abs-br m-8 text-center text-xs text-gray-600">
+  <div class="w-20 h-20 border border-gray-700 rounded-xl flex items-center justify-center text-gray-700 text-3xl bg-black/30">
     QR
   </div>
-  <div class="mt-1">Workshop Repo</div>
+  <div class="mt-2 tracking-wide">Workshop Repo</div>
 </div>
 
 <!--
@@ -37,12 +70,58 @@ Kendini tanıt. EPAM'ın DataDays 2026 sponsoru olduğunu kısaca belirt.
 
 ---
 layout: center
+transition: fade
 ---
 
-*"Kahoot'u bitirdik — şimdi **SİZDEN** öğrenmek istiyorum"*
+<div class="flex flex-col items-center gap-8">
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: -12 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 450 } }"
+  class="text-center"
+>
+  <div class="step-label mb-2">Sli.do</div>
+  <p class="text-2xl text-gray-300 leading-relaxed">
+    Katılmak için QR'ı okutun
+  </p>
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, scale: 0.85 }"
+  :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 140, damping: 16, delay: 150 } }"
+  class="rounded-2xl overflow-hidden border border-violet-500/20 shadow-2xl"
+  style="background: white; padding: 1rem;"
+>
+  <img src="./_inputs/qrsurvey.png" class="w-52 h-52 block" alt="Sli.do QR" />
+</div>
+
+</div>
 
 <!--
-"El kaldırın" çerçevesiyle geç. Kahoot enerjisini ankete taşı.
+QR'ı göster, bekle. Sli.do enerjisini ankete taşı.
+-->
+
+---
+layout: center
+transition: fade
+---
+
+<div
+  v-motion
+  :initial="{ opacity: 0, scale: 0.94 }"
+  :enter="{ opacity: 1, scale: 1, transition: { duration: 500 } }"
+  class="text-center max-w-2xl"
+>
+  <p class="text-3xl text-gray-300 italic leading-relaxed">
+    "Sli.do'yu bitirdik —<br>
+    şimdi <strong class="text-white not-italic">sizden</strong> öğrenmek istiyorum"
+  </p>
+</div>
+
+<!--
+"El kaldırın" çerçevesiyle geç. Sli.do enerjisini ankete taşı.
 -->
 
 ---
@@ -58,13 +137,26 @@ Eller kalktıkça kutucukları işaretle.
 -->
 
 ---
-layout: statement
+layout: center
+transition: fade
 ---
 
-"Hiç AI'dan, daha önce hiç görmediği bir kod tabanını anlamasını istedikten sonra — onu güvenle saçmaladığını izlediniz mi?"
+<div class="max-w-2xl mx-auto text-center">
 
-<div v-click class="mt-10 text-2xl text-gray-400 italic">
-  Ben izledim. İşte öğrendiklerim.
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 20 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+  class="text-2xl text-gray-300 italic leading-relaxed"
+>
+  "Hiç AI'dan yeni bir kod tabanını anlamasını istedikten sonra —<br>
+  onu <span class="text-white not-italic font-semibold">güvenle saçmaladığını</span> izlediniz mi?"
+</div>
+
+<div v-click class="mt-12 text-xl text-gray-500 not-italic">
+  Ben izledim. Bu atölye o günden çıkan dersleri anlatıyor.
+</div>
+
 </div>
 
 <!--
@@ -76,71 +168,106 @@ Sonra v-click ile punch line'ı aç.
 layout: two-cols
 ---
 
+<div class="pr-6">
+
 # AI'ın Bildikleri
 
 <v-clicks>
 
-- Açık kaynak GitHub repoları
-- Stack Overflow yanıtları
-- Dökümantasyon siteleri
+- Milyonlarca açık kaynak repo
+- Stack Overflow, belgeler, bloglar
+- Genel best practice'ler
 - Kamuya açık her şey
 
 </v-clicks>
 
+</div>
+
 ::right::
 
-# AI'ın Bilmedikleri
+<div class="pl-4 border-l border-amber-500/20">
+
+# AI'ın <span class="text-amber-400">Bilmedikleri</span>
 
 <v-clicks>
 
 - **Senin** kod tabanın
-- Aldığın mimari kararlar
-- Kapalı kaynak kütüphanelerin
-- Şirket içi konvansiyonlar
+- Neden o mimari kararı aldığın
+- Şirket içi kütüphanelerin
+- Ekibin yazılı olmayan kuralları
 
 </v-clicks>
+
+</div>
 
 <!--
 Bu bir bug değil — tasarımsal bir kısıt.
 -->
 
 ---
-layout: quote
+layout: center
+transition: fade
 ---
 
-"İlk çözümüm: markdown notlar, parmaklar çapraz, AI iyi zar atsın diye dua."
-
-<div class="text-right mt-4 text-gray-400">— Ben, 3. sprint</div>
+<div
+  v-motion
+  :initial="{ opacity: 0 }"
+  :enter="{ opacity: 1, transition: { duration: 600 } }"
+  class="max-w-xl mx-auto"
+>
+  <div class="text-4xl text-gray-300 italic leading-relaxed">
+    "İlk çözümüm: markdown notlar, parmaklar çapraz, AI iyi zar atsın diye dua."
+  </div>
+  <div class="mt-6 text-gray-600 text-right">— Ben, 3. sprint</div>
+</div>
 
 <!--
 Dur. Gülüşmeleri bekle. Bu an tanıdık gelmeli.
 -->
 
 ---
-layout: default
+layout: center
+transition: slide-up
 ---
 
-<div class="text-center mt-8">
-  <div class="text-7xl font-black tracking-tight">Memory Bank</div>
-  <div class="text-2xl text-gray-400 mt-6">
-    Yapılandırılmış Markdown dosyalar.<br>
-    Hem sen hem AI okuyabilir. Hepsi bu.
-  </div>
-  <div v-click class="mt-10 text-xl text-blue-400 font-medium">
-    Cerrahi kod erişimi ekle → AI artık kıdemli bir geliştirici gibi geziyor
-  </div>
+<div class="text-center">
+
+<div
+  v-motion
+  :initial="{ opacity: 0, scale: 0.75 }"
+  :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 160, damping: 18, delay: 50 } }"
+  class="text-8xl font-black tracking-tight text-gradient leading-none"
+>
+  Memory Bank
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 18 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 350 } }"
+  class="mt-6 text-xl text-gray-400 leading-relaxed"
+>
+  Yapılandırılmış Markdown dosyalar.<br>
+  Hem sen hem AI okur. Başka bir şey yok.
+</div>
+
+<div v-click class="mt-10 space-y-1">
+  <div class="text-gray-500 text-base">Buna bir de cerrahi kod erişimi ekle</div>
+  <div class="text-lg text-violet-300 font-medium">→ AI artık kıdemli bir geliştirici gibi geziyor</div>
+</div>
+
 </div>
 
 <!--
-Cengiz Han / AI Native Engineering 201 referansı.
 "Kıdemli geliştirici" analojisini vurgula.
 -->
 
 ---
 layout: section
+transition: slide-up
 ---
 
-# Hep Birlikte Şimdi İnşa Edelim
+# Haydi, Birlikte İnşa Edelim
 
 <!--
 Enerji geçişi. Dizüstü bilgisayarları açmalarını davet et.
@@ -150,28 +277,41 @@ Enerji geçişi. Dizüstü bilgisayarları açmalarını davet et.
 layout: two-cols
 ---
 
-# Stack Genel Bakış
+# Stack
 
 ```mermaid
 flowchart LR
-  A[OpenCode CLI] --> B["Memory Bank\nObsidian"]
+  A[OpenCode CLI] --> B["Memory Bank\nMarkdown"]
   B --> C[jCodeMunch MCP]
   C --> D[MLflow repo]
 ```
 
 ::right::
 
-<v-clicks>
+<div class="flex flex-col gap-3 mt-2 pl-4">
 
-- **OpenCode** — Ücretsiz, terminal tabanlı AI kodlama ajanı
-- **Memory Bank** — AI'a kalıcı bağlam veren Markdown dosyalar
-- **jCodeMunch** — Kod tabanını indeksler, yalnızca gerekeni getirir
-- **MLflow** — Bugün birlikte gezeceğimiz gerçek dünya kod tabanı
+<div v-click class="tool-card tool-card-violet">
+  <div class="font-bold text-violet-300 text-sm mb-1">OpenCode CLI</div>
+  <div class="text-xs text-gray-400">Ücretsiz, açık kaynak, terminal tabanlı AI kodlama ajanı</div>
+</div>
 
-</v-clicks>
+<div v-click class="tool-card tool-card-amber">
+  <div class="font-bold text-amber-300 text-sm mb-1">Memory Bank</div>
+  <div class="text-xs text-gray-400">AI'a kalıcı bağlam veren Markdown dosyalar</div>
+</div>
 
-<div class="mt-6 text-sm text-gray-400">
-  <code>github.com/mlflow/mlflow</code>
+<div v-click class="tool-card tool-card-indigo">
+  <div class="font-bold text-indigo-300 text-sm mb-1">jCodeMunch MCP</div>
+  <div class="text-xs text-gray-400">Repo'yu indeksler, yalnızca gerekeni getirir</div>
+</div>
+
+<div v-click class="tool-card tool-card-emerald">
+  <div class="font-bold text-emerald-300 text-sm mb-1">MLflow</div>
+  <div class="text-xs text-gray-400">Bugün birlikte gezeceğimiz gerçek dünya kodu</div>
+</div>
+
+<div v-click class="mt-1 font-mono text-xs text-gray-700">github.com/mlflow/mlflow</div>
+
 </div>
 
 <!--
@@ -186,18 +326,23 @@ layout: default
 import { survey } from '@/setup/survey'
 </script>
 
-# Adım 1: Fork & Clone
+<div class="step-label">Adım 01</div>
+
+# Fork & Clone
 
 ```bash
-# Repo'yu fork et ve klonla
+# Repo'yu fork et, yerel makineye klonla
 git clone https://github.com/YOUR-HANDLE/datadays2026-workshop
 cd datadays2026-workshop
 ```
 
+<div v-click class="mt-5 callout callout-violet text-sm text-gray-300">
+  Bu repoda memory bank iskeleti hazır — sıfırdan başlamıyoruz.
+</div>
+
 <TerminalCheatSheet v-if="survey.terminal === 'nope'" class="mt-4" />
 
 <!--
-"Bu repo'da memory bank iskeleti zaten hazır — sıfırdan başlamıyoruz."
 Terminal konforunu yokla — TerminalCheatSheet otomatik açılır.
 -->
 
@@ -205,25 +350,25 @@ Terminal konforunu yokla — TerminalCheatSheet otomatik açılır.
 layout: default
 ---
 
-# Adım 2: Bağlam Olmadan AI
+<div class="step-label">Adım 02</div>
+
+# Bağlam Olmadan AI
 
 ```bash
 opencode
 > MLflow bir artifact'ı nasıl kaydediyor? Tam kod yolunu göster.
 ```
 
-<div v-click class="mt-6 p-4 bg-red-950/30 border border-red-700/50 rounded-lg font-mono text-sm text-gray-300">
-  "MLflow'da artifact kaydetmek için <code>mlflow.log_artifact()</code> kullanabilirsiniz.
-  Bu fonksiyon genellikle <code>mlflow/tracking/client.py</code> içinde tanımlanmıştır
-  ve <code>ArtifactRepository</code> sınıfını çağırır..."
-  <span class="text-gray-500"> [47 dosya okundu, yanıt devam ediyor...]</span>
+<div v-click class="mt-5 callout callout-red font-mono text-sm text-gray-400 leading-relaxed">
+  "MLflow'da artifact kaydetmek için <code class="text-red-300">mlflow.log_artifact()</code> kullanabilirsiniz.
+  Bu fonksiyon genellikle <code class="text-red-300">mlflow/tracking/client.py</code> içinde tanımlanmıştır
+  ve <code class="text-red-300">ArtifactRepository</code> sınıfını çağırır..."
+  <span class="text-gray-600"> [47 dosya okundu, yanıt devam ediyor...]</span>
 </div>
 
-<div v-click class="mt-4 flex items-center gap-3">
-  <div class="px-4 py-2 bg-red-700 rounded-full font-bold text-white text-lg">
-    ~70.000 token 🔴
-  </div>
-  <div class="text-gray-400 text-sm">Belirsiz cevap · Uydurulmuş fonksiyon isimleri · Dosya referansı yok</div>
+<div v-click class="mt-5 flex items-center gap-4">
+  <div class="stat-bad">~70.000 token</div>
+  <div class="text-gray-500 text-sm">Belirsiz cevap · Uydurulmuş referanslar · Hiç dosya yolu yok</div>
 </div>
 
 <!--
@@ -234,19 +379,21 @@ opencode
 layout: two-cols
 ---
 
-# Adım 3: Memory Bank'i Kur
+<div class="step-label">Adım 03</div>
 
-```
-datadays2026-workshop/
-├── memory-bank/
-│   ├── projectBrief.md
-│   ├── techContext.md
-│   ├── activeContext.md
-│   └── systemPatterns.md
-├── mlflow/
-└── .opencode/
-    └── config.json
-```
+# Memory Bank'i Kur
+
+<div class="file-tree mt-4">
+  <span class="dir">datadays2026-workshop/</span><br>
+  ├── <span class="dir">memory-bank/</span><br>
+  │   ├── <span class="hl">projectBrief.md</span><br>
+  │   ├── <span class="hl">techContext.md</span><br>
+  │   ├── <span class="hl">activeContext.md</span><br>
+  │   └── <span class="hl">systemPatterns.md</span><br>
+  ├── <span class="dir">mlflow/</span><br>
+  └── <span class="dir">.opencode/</span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;└── <span class="file">config.json</span>
+</div>
 
 ::right::
 
@@ -278,7 +425,7 @@ layout: default
 
 # AI'a Memory Bank'ini Kendin Yaptır
 
-Repoyu klonladıktan sonra OpenCode'a bu promptu ver:
+Klonladıktan sonra OpenCode'a bu promptu ver:
 
 ```text {monaco}
 Sen bir proje dokümantasyon uzmanısın.
@@ -301,35 +448,50 @@ Her dosyayı Markdown formatında yaz.
 Sadece repoda gerçekten var olan bilgileri kullan, tahmin etme.
 ```
 
-<div v-click class="mt-3 p-3 bg-green-900/30 border border-green-600/50 rounded-lg text-sm">
-  Bu prompt MLflow reposu için ortalama <strong>4.200 token</strong> harcar.
-  Sonucu bir kez üretirsin, sonsuza kadar kullanırsın.
+<div v-click class="mt-3 callout callout-green text-sm text-gray-300">
+  Bu prompt MLflow reposu için ortalama <strong class="text-emerald-400">4.200 token</strong> harcar.
+  Bir kez üretirsin, sonsuza dek kullanırsın.
 </div>
 
 <!--
-Bunu canlı olarak demoyla göster — promptu çalıştır, oluşturulan dosyaları Obsidian'da göster.
+Bunu canlı demo et — promptu çalıştır, oluşturulan dosyaları göster.
 -->
 
 ---
-layout: image-right
-image: https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800
+layout: two-cols
 ---
 
 # Obsidian'da Nasıl Görünür
 
-- Her dosya birbirine **backlink** ile bağlı
+<v-clicks>
+
+- Her dosya backlink ile birbirine bağlı
 - Agent aynı dosyaları okuyup güncelleyebilir
 - Sen de okuyabilirsin — sade Markdown
 
-```md
-# projectBrief.md
-...proje özeti...
+</v-clicks>
 
-Bkz: [[techContext]] · [[systemPatterns]]
-```
+<div v-click class="mt-5 file-tree text-xs">
+  <span class="hl"># projectBrief.md</span><br>
+  ...proje özeti...<br>
+  <br>
+  Bkz: <span class="text-sky-400">[[techContext]]</span> · <span class="text-sky-400">[[systemPatterns]]</span>
+</div>
 
-<div class="mt-4 text-sm text-gray-400">
-  Graph view'da tüm bağlantıları görselleştir
+::right::
+
+<div class="flex flex-col justify-center h-full gap-4 pl-8">
+
+<div v-click class="callout callout-violet text-sm text-gray-300 leading-relaxed">
+  Graph view'da tüm dosyalar arasındaki bağlantıları görselleştir.
+  Projeyi görsel olarak kavramak için harika.
+</div>
+
+<div v-click class="callout callout-amber text-sm text-gray-300 leading-relaxed">
+  <strong class="text-amber-300">Kural:</strong><br>
+  Yeni takım arkadaşına ilk gün anlatacağın her şey memory bank'e gider.
+</div>
+
 </div>
 
 <!--
@@ -340,7 +502,9 @@ Obsidian'ı canlı aç, graph view'ı göster — zaman izin verirse.
 layout: default
 ---
 
-# Adım 4: jCodeMunch'ı Bağla
+<div class="step-label">Adım 04</div>
+
+# jCodeMunch'ı Bağla
 
 ````md magic-move
 ```bash
@@ -356,33 +520,41 @@ opencode
 opencode
 > MLflow bir artifact'ı nasıl kaydediyor?
 
-# jCodeMunch: log_artifact() bulundu → artifact_repo.py:L234
-# jCodeMunch: ArtifactRepository bulundu → store/abstract_store.py:L89
+# jCodeMunch: log_artifact() → artifact_repo.py:L234
+# jCodeMunch: ArtifactRepository → store/abstract_store.py:L89
 
 # Sonuç: 2 dosya · 4.800 token · satır numaralı kesin cevap
 ```
 ````
 
 <!--
-Bunu sadece slayt olarak değil, canlı olarak da demoyla göster.
-Farkı net hissettir.
+Canlı demo et. Farkı net hissettir.
 -->
 
 ---
 layout: fact
+transition: fade
 ---
 
-# <span v-mark.circle.orange="1">16×</span>
+<div
+  v-motion
+  :initial="{ opacity: 0, scale: 0.5 }"
+  :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 180, damping: 16, delay: 150 } }"
+  class="leading-none"
+>
+  <span v-mark.circle.amber="1" class="text-amber-400 font-black" style="font-size: 8rem;">16×</span>
+</div>
 
-daha ucuz · daha hızlı · halüsinasyon yok
+<div class="text-2xl text-gray-400 mt-4 font-light tracking-wide">
+  daha ucuz &nbsp;·&nbsp; daha hızlı &nbsp;·&nbsp; halüsinasyon yok
+</div>
 
-<div class="text-xl text-gray-400 mt-4">
-  70.000 token → 4.800 token. Aynı soru. Daha iyi cevap.
+<div v-click class="mt-5 text-gray-500 text-base">
+  70.000 token → 4.800 token. Aynı soru. Çok daha iyi cevap.
 </div>
 
 <!--
 Dur. Rakamın yerleşmesini bekle.
-Sonra circle animasyonunu tıkla.
 -->
 
 ---
@@ -402,20 +574,30 @@ src: ./pages/section-sync.md
 ---
 
 ---
-layout: default
+layout: center
+transition: fade
 ---
 
-# Senin Görevin
+<div class="text-center max-w-xl mx-auto">
 
-Datathon sırasında şunu dene:
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 16 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+>
+  <div class="step-label mb-4">Meydan Okuma</div>
+  <h2 class="text-4xl font-black mb-6">Dene Bakalım</h2>
+</div>
 
-```text
-jCodeMunch kullanarak [projenin temel fonksiyonu]'nun nasıl
-çalıştığını tek bir dosyayı manuel olarak açmadan bul.
-```
+<div v-click class="callout callout-violet text-left text-sm text-gray-300 leading-relaxed font-mono">
+  jCodeMunch kullanarak [projenin temel fonksiyonu]'nun nasıl<br>
+  çalıştığını <strong class="text-violet-300">tek bir dosyayı manuel açmadan</strong> bul.
+</div>
 
-<div v-click class="mt-6 text-xl text-blue-300">
-  Sonra bulduklarını <code>memory-bank/activeContext.md</code>'ye ekle.
+<div v-click class="mt-5 text-base text-gray-400">
+  Bulduktan sonra → <code class="text-violet-300">memory-bank/activeContext.md</code>'ye ekle
+</div>
+
 </div>
 
 <!--
@@ -424,24 +606,32 @@ Meydan okuma net ve somut olsun.
 
 ---
 layout: two-cols
+transition: slide-up
 ---
 
-# 3 Çıkarım
+# Aklında Kalsın
 
 <v-clicks>
 
-1. **Önce dokümantasyon** — Feature geliştirmeden önce memory bank'ini kur
-2. **AI'a az ver** — Cerrahi erişim, tüm dosyaları dökmekten iyidir
-3. **Bilginin sahibi ol** — Tek bir araca bağımlı olma
+1. **Kod yazmadan önce, AI'ına anlat** — Memory bank, her sprintin ilk 5 dakikası
+2. **Az ver, iyi ver** — Cerrahi erişim her zaman "hepsini gönder"i döver
+3. **Araç değişir, bilgin kalır** — Memory bank senindir, herhangi bir AI okuyabilir
 
 </v-clicks>
 
 ::right::
 
-<div class="flex flex-col items-center justify-center h-full gap-4">
-  <div class="text-5xl font-black text-blue-400">EPAM</div>
-  <div class="text-gray-400 text-center text-lg">Bizimle çalışmak ister misin?</div>
-  <div class="text-sm text-gray-500 text-center mt-2">epam.com/careers</div>
+<div
+  v-motion
+  :initial="{ opacity: 0, x: 20 }"
+  :enter="{ opacity: 1, x: 0, transition: { duration: 500, delay: 200 } }"
+  class="flex flex-col items-center justify-center h-full gap-5 pl-8"
+>
+  <div class="text-5xl font-black text-gradient-cool">EPAM</div>
+  <div class="text-gray-400 text-center text-base leading-relaxed">
+    AI-native mühendislikle neler yaptığımızı merak ediyorsan, konuşalım.
+  </div>
+  <div class="text-sm text-gray-600 font-mono">epam.com/careers</div>
 </div>
 
 <!--
@@ -450,21 +640,33 @@ EPAM kısmı ince tutulsun, zorlamadan.
 -->
 
 ---
-layout: end
+layout: center
+transition: fade
 ---
 
-# Teşekkürler!
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 20 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+  class="text-center"
+>
 
-<div class="grid grid-cols-2 gap-8 mt-8 text-center">
+<h1 class="text-6xl font-black text-gradient">Teşekkürler!</h1>
+
+<div class="divider-accent mx-auto mt-6 mb-8" style="width: 3rem;" />
+
+<div class="grid grid-cols-2 gap-8 max-w-lg mx-auto text-center">
   <div>
-    <div class="text-sm text-gray-400 mb-2">İletişim</div>
-    <div class="font-mono text-blue-300">@gokhanozdemir</div>
-    <div class="text-sm text-gray-500 mt-1">LinkedIn · GitHub</div>
+    <div class="text-xs text-gray-600 uppercase tracking-widest mb-2">İletişim</div>
+    <div class="font-mono text-violet-300 text-lg">@gokhanozdemir</div>
+    <div class="text-sm text-gray-600 mt-1">LinkedIn · GitHub</div>
   </div>
   <div>
-    <div class="text-sm text-gray-400 mb-2">Workshop Repo</div>
-    <div class="font-mono text-blue-300 text-sm">github.com/[handle]/datadays2026-workshop</div>
+    <div class="text-xs text-gray-600 uppercase tracking-widest mb-2">Workshop Repo</div>
+    <div class="font-mono text-violet-300 text-sm leading-relaxed">github.com/[handle]/<br>datadays2026-workshop</div>
   </div>
+</div>
+
 </div>
 
 <!--
