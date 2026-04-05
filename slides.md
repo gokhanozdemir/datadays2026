@@ -57,9 +57,9 @@ dragPos:
   <span>@gokhanozdemir</span>
 </div>
 
-<div v-drag="'qr'" class="abs-br m-8 text-center text-xs text-gray-600">
-  <div class="w-20 h-20 border border-gray-700 rounded-xl flex items-center justify-center text-gray-700 text-3xl bg-black/30">
-    QR
+<div v-drag="'qr'" class="abs-br m-8 text-center text-xs text-gray-500">
+  <div class="w-20 h-20 rounded-xl overflow-hidden bg-white p-1.5">
+    <img src="./_inputs/qrrepo.png" class="w-full h-full block" alt="Workshop Repo QR" />
   </div>
   <div class="mt-2 tracking-wide">Workshop Repo</div>
 </div>
@@ -280,7 +280,7 @@ layout: two-cols
 # Stack
 
 ```mermaid
-flowchart LR
+flowchart TB
   A[OpenCode CLI] --> B["Memory Bank\nMarkdown"]
   B --> C[jCodeMunch MCP]
   C --> D[MLflow repo]
@@ -637,6 +637,77 @@ transition: slide-up
 <!--
 Çıkarımları yavaş aç — her biri bir tık.
 EPAM kısmı ince tutulsun, zorlamadan.
+-->
+
+---
+layout: default
+transition: slide-up
+---
+
+<div class="step-label">Kaynaklar</div>
+
+# Bugün Kullandığımız Araçlar
+
+<div class="grid grid-cols-2 gap-5 mt-6">
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 14 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 450 } }"
+  class="tool-card tool-card-violet"
+>
+  <div class="flex items-center justify-between mb-2">
+    <div class="font-bold text-violet-300 text-lg">OpenCode</div>
+    <div class="text-xs text-gray-600 font-mono">terminal AI ajanı</div>
+  </div>
+  <div class="font-mono text-xs text-gray-400 mb-3">github.com/sst/opencode</div>
+  <div class="text-xs text-gray-500 leading-relaxed">
+    Ücretsiz, açık kaynak. İşinize yaradıysa <span class="text-amber-300">⭐ yıldızlayın</span> — geliştiricilere moral oluyor.
+  </div>
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 14 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 450, delay: 100 } }"
+  class="tool-card tool-card-amber"
+>
+  <div class="flex items-center justify-between mb-2">
+    <div class="font-bold text-amber-300 text-lg">jCodeMunch</div>
+    <div class="text-xs text-gray-600 font-mono">MCP repo indeksi</div>
+  </div>
+  <div class="font-mono text-xs text-gray-400 mb-3">github.com/jcodemunch/jcodemunch</div>
+  <div class="text-xs text-gray-500 leading-relaxed">
+    Ücretsiz, açık kaynak. İşinize yaradıysa <span class="text-amber-300">⭐ yıldızlayın</span> — projeyi büyütüyor.
+  </div>
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 14 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 450, delay: 200 } }"
+  class="tool-card tool-card-indigo"
+>
+  <div class="font-bold text-indigo-300 mb-1">Obsidian</div>
+  <div class="font-mono text-xs text-gray-400 mb-2">obsidian.md</div>
+  <div class="text-xs text-gray-500">Memory bank'i gezmek için markdown editörü</div>
+</div>
+
+<div
+  v-motion
+  :initial="{ opacity: 0, y: 14 }"
+  :enter="{ opacity: 1, y: 0, transition: { duration: 450, delay: 300 } }"
+  class="tool-card tool-card-emerald"
+>
+  <div class="font-bold text-emerald-300 mb-1">MLflow</div>
+  <div class="font-mono text-xs text-gray-400 mb-2">github.com/mlflow/mlflow</div>
+  <div class="text-xs text-gray-500">Demoda gezdiğimiz ML platformu</div>
+</div>
+
+</div>
+
+<!--
+Her iki ana aracı da GitHub'da star etmelerini iste — açık kaynak ekosistemi böyle büyüyor.
 -->
 
 ---
