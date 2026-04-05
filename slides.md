@@ -1,637 +1,472 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply UnoCSS classes to the current slide
-class: text-center
-# https://sli.dev/features/drawing
-drawings:
-  persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
+title: "Daha Zeki Çalış, Daha Çok Değil"
+titleTemplate: "%s — EPAM × DataDays 2026"
+author: Gökhan Özdemir
+duration: 30
+timer: countdown
 transition: slide-left
-# enable Comark Syntax: https://comark.dev/syntax/markdown
 comark: true
-# duration of the presentation
-duration: 35min
----
-
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc text-sm minDepth="1" maxDepth="2" />
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# $\LaTeX$
-
-$\LaTeX$ is supported out-of-box. Powered by [$\KaTeX$](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
+lineNumbers: false
 dragPos:
-  square: 691,32,167,_,-16
+  qr: 865,370,83,100
 ---
 
-# Draggable Elements
+# Daha Zeki Çalış, Daha Çok Değil
 
-Double-click on the draggable elements to edit their positions.
+Ajanlarla Çalışmak: Ücretsiz Araçlarla AI Geliştirme Atölyesi
 
-<br>
+<div class="abs-bl m-8 text-gray-400 flex items-center gap-4 text-sm">
+  <span>EPAM</span>
+  <span>·</span>
+  <span>DataDays 2026</span>
+  <span>·</span>
+  <span>@gokhanozdemir</span>
+</div>
 
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="441,277,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
+<div v-drag="'qr'" class="abs-br m-8 text-center text-xs text-gray-400">
+  <div class="w-20 h-20 border-2 border-gray-400 rounded flex items-center justify-center text-gray-500 text-3xl">
+    QR
   </div>
-</v-drag>
+  <div class="mt-1">Workshop Repo</div>
+</div>
 
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
+<!--
+Kendini tanıt. EPAM'ın DataDays 2026 sponsoru olduğunu kısaca belirt.
+-->
 
 ---
 layout: center
-class: text-center
 ---
 
-# Learn More
+*"Kahoot'u bitirdik — şimdi **SİZDEN** öğrenmek istiyorum"*
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<!--
+"El kaldırın" çerçevesiyle geç. Kahoot enerjisini ankete taşı.
+-->
 
-<PoweredBySlidev mt-10 />
+---
+layout: default
+---
+
+<SurveySlide />
+
+<!--
+Her seçeneği sesli oku.
+"Bu seçim şu slaytları açıyor" de — dinamik içeriği vurgula.
+Eller kalktıkça kutucukları işaretle.
+-->
+
+---
+layout: statement
+---
+
+"Hiç AI'dan, daha önce hiç görmediği bir kod tabanını anlamasını istedikten sonra — onu güvenle saçmaladığını izlediniz mi?"
+
+<div v-click class="mt-10 text-2xl text-gray-400 italic">
+  Ben izledim. İşte öğrendiklerim.
+</div>
+
+<!--
+Soruyu oku, dur. Ellerin kalkmasını bekle.
+Sonra v-click ile punch line'ı aç.
+-->
+
+---
+layout: two-cols
+---
+
+# AI'ın Bildikleri
+
+<v-clicks>
+
+- Açık kaynak GitHub repoları
+- Stack Overflow yanıtları
+- Dökümantasyon siteleri
+- Kamuya açık her şey
+
+</v-clicks>
+
+::right::
+
+# AI'ın Bilmedikleri
+
+<v-clicks>
+
+- **Senin** kod tabanın
+- Aldığın mimari kararlar
+- Kapalı kaynak kütüphanelerin
+- Şirket içi konvansiyonlar
+
+</v-clicks>
+
+<!--
+Bu bir bug değil — tasarımsal bir kısıt.
+-->
+
+---
+layout: quote
+---
+
+"İlk çözümüm: markdown notlar, parmaklar çapraz, AI iyi zar atsın diye dua."
+
+<div class="text-right mt-4 text-gray-400">— Ben, 3. sprint</div>
+
+<!--
+Dur. Gülüşmeleri bekle. Bu an tanıdık gelmeli.
+-->
+
+---
+layout: default
+---
+
+<div class="text-center mt-8">
+  <div class="text-7xl font-black tracking-tight">Memory Bank</div>
+  <div class="text-2xl text-gray-400 mt-6">
+    Yapılandırılmış Markdown dosyalar.<br>
+    Hem sen hem AI okuyabilir. Hepsi bu.
+  </div>
+  <div v-click class="mt-10 text-xl text-blue-400 font-medium">
+    Cerrahi kod erişimi ekle → AI artık kıdemli bir geliştirici gibi geziyor
+  </div>
+</div>
+
+<!--
+Cengiz Han / AI Native Engineering 201 referansı.
+"Kıdemli geliştirici" analojisini vurgula.
+-->
+
+---
+layout: section
+---
+
+# Hep Birlikte Şimdi İnşa Edelim
+
+<!--
+Enerji geçişi. Dizüstü bilgisayarları açmalarını davet et.
+-->
+
+---
+layout: two-cols
+---
+
+# Stack Genel Bakış
+
+```mermaid
+flowchart LR
+  A[OpenCode CLI] --> B["Memory Bank\nObsidian"]
+  B --> C[jCodeMunch MCP]
+  C --> D[MLflow repo]
+```
+
+::right::
+
+<v-clicks>
+
+- **OpenCode** — Ücretsiz, terminal tabanlı AI kodlama ajanı
+- **Memory Bank** — AI'a kalıcı bağlam veren Markdown dosyalar
+- **jCodeMunch** — Kod tabanını indeksler, yalnızca gerekeni getirir
+- **MLflow** — Bugün birlikte gezeceğimiz gerçek dünya kod tabanı
+
+</v-clicks>
+
+<div class="mt-6 text-sm text-gray-400">
+  <code>github.com/mlflow/mlflow</code>
+</div>
+
+<!--
+Araçlar arası ilişkiyi akışta göster.
+-->
+
+---
+layout: default
+---
+
+<script setup lang="ts">
+import { survey } from '@/setup/survey'
+</script>
+
+# Adım 1: Fork & Clone
+
+```bash
+# Repo'yu fork et ve klonla
+git clone https://github.com/YOUR-HANDLE/datadays2026-workshop
+cd datadays2026-workshop
+```
+
+<TerminalCheatSheet v-if="survey.terminal === 'nope'" class="mt-4" />
+
+<!--
+"Bu repo'da memory bank iskeleti zaten hazır — sıfırdan başlamıyoruz."
+Terminal konforunu yokla — TerminalCheatSheet otomatik açılır.
+-->
+
+---
+layout: default
+---
+
+# Adım 2: Bağlam Olmadan AI
+
+```bash
+opencode
+> MLflow bir artifact'ı nasıl kaydediyor? Tam kod yolunu göster.
+```
+
+<div v-click class="mt-6 p-4 bg-red-950/30 border border-red-700/50 rounded-lg font-mono text-sm text-gray-300">
+  "MLflow'da artifact kaydetmek için <code>mlflow.log_artifact()</code> kullanabilirsiniz.
+  Bu fonksiyon genellikle <code>mlflow/tracking/client.py</code> içinde tanımlanmıştır
+  ve <code>ArtifactRepository</code> sınıfını çağırır..."
+  <span class="text-gray-500"> [47 dosya okundu, yanıt devam ediyor...]</span>
+</div>
+
+<div v-click class="mt-4 flex items-center gap-3">
+  <div class="px-4 py-2 bg-red-700 rounded-full font-bold text-white text-lg">
+    ~70.000 token 🔴
+  </div>
+  <div class="text-gray-400 text-sm">Belirsiz cevap · Uydurulmuş fonksiyon isimleri · Dosya referansı yok</div>
+</div>
+
+<!--
+İzleyicilerin belirsizliği fark etmesini bekle.
+-->
+
+---
+layout: two-cols
+---
+
+# Adım 3: Memory Bank'i Kur
+
+```
+datadays2026-workshop/
+├── memory-bank/
+│   ├── projectBrief.md
+│   ├── techContext.md
+│   ├── activeContext.md
+│   └── systemPatterns.md
+├── mlflow/
+└── .opencode/
+    └── config.json
+```
+
+::right::
+
+```markdown
+# projectBrief.md
+
+## Proje Nedir?
+MLflow — ML lifecycle yönetim platformu.
+Experiment tracking, model registry,
+deployment araçları içerir.
+
+## Kime Hitap Eder?
+Veri bilimciler ve ML mühendisleri.
+
+## Temel Özellikler
+- Experiment tracking
+- Model Registry
+- MLflow Projects
+- MLflow Models
+```
+
+<!--
+"5 dakikada doldurulur. Proje değişmedikçe bir daha dokunmazsın."
+-->
+
+---
+layout: default
+---
+
+# AI'a Memory Bank'ini Kendin Yaptır
+
+Repoyu klonladıktan sonra OpenCode'a bu promptu ver:
+
+```text {monaco}
+Sen bir proje dokümantasyon uzmanısın.
+Aşağıdaki repo yapısını ve README dosyasını incele.
+Sonra benim için şu dosyaları oluştur:
+
+1. memory-bank/projectBrief.md
+   - Projenin amacı, kime hitap ettiği, temel özellikler
+
+2. memory-bank/techContext.md
+   - Kullanılan dil ve framework'ler, kurulum adımları, bağımlılıklar
+
+3. memory-bank/activeContext.md
+   - Aktif modüller, bilinen TODOlar, açık issues
+
+4. memory-bank/systemPatterns.md
+   - Mimari kararlar, kodlama kuralları, önemli patternlar
+
+Her dosyayı Markdown formatında yaz.
+Sadece repoda gerçekten var olan bilgileri kullan, tahmin etme.
+```
+
+<div v-click class="mt-3 p-3 bg-green-900/30 border border-green-600/50 rounded-lg text-sm">
+  Bu prompt MLflow reposu için ortalama <strong>4.200 token</strong> harcar.
+  Sonucu bir kez üretirsin, sonsuza kadar kullanırsın.
+</div>
+
+<!--
+Bunu canlı olarak demoyla göster — promptu çalıştır, oluşturulan dosyaları Obsidian'da göster.
+-->
+
+---
+layout: image-right
+image: https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800
+---
+
+# Obsidian'da Nasıl Görünür
+
+- Her dosya birbirine **backlink** ile bağlı
+- Agent aynı dosyaları okuyup güncelleyebilir
+- Sen de okuyabilirsin — sade Markdown
+
+```md
+# projectBrief.md
+...proje özeti...
+
+Bkz: [[techContext]] · [[systemPatterns]]
+```
+
+<div class="mt-4 text-sm text-gray-400">
+  Graph view'da tüm bağlantıları görselleştir
+</div>
+
+<!--
+Obsidian'ı canlı aç, graph view'ı göster — zaman izin verirse.
+-->
+
+---
+layout: default
+---
+
+# Adım 4: jCodeMunch'ı Bağla
+
+````md magic-move
+```bash
+# jCodeMunch olmadan
+opencode
+> MLflow bir artifact'ı nasıl kaydediyor?
+
+# Sonuç: 47 dosya okundu · 70.000 token · belirsiz cevap
+```
+
+```bash
+# jCodeMunch + Memory Bank ile
+opencode
+> MLflow bir artifact'ı nasıl kaydediyor?
+
+# jCodeMunch: log_artifact() bulundu → artifact_repo.py:L234
+# jCodeMunch: ArtifactRepository bulundu → store/abstract_store.py:L89
+
+# Sonuç: 2 dosya · 4.800 token · satır numaralı kesin cevap
+```
+````
+
+<!--
+Bunu sadece slayt olarak değil, canlı olarak da demoyla göster.
+Farkı net hissettir.
+-->
+
+---
+layout: fact
+---
+
+# <span v-mark.circle.orange="1">16×</span>
+
+daha ucuz · daha hızlı · halüsinasyon yok
+
+<div class="text-xl text-gray-400 mt-4">
+  70.000 token → 4.800 token. Aynı soru. Daha iyi cevap.
+</div>
+
+<!--
+Dur. Rakamın yerleşmesini bekle.
+Sonra circle animasyonunu tıkla.
+-->
+
+---
+src: ./pages/section-setup.md
+---
+
+---
+src: ./pages/section-memory.md
+---
+
+---
+src: ./pages/section-context.md
+---
+
+---
+src: ./pages/section-sync.md
+---
+
+---
+layout: default
+---
+
+# Senin Görevin
+
+Datathon sırasında şunu dene:
+
+```text
+jCodeMunch kullanarak [projenin temel fonksiyonu]'nun nasıl
+çalıştığını tek bir dosyayı manuel olarak açmadan bul.
+```
+
+<div v-click class="mt-6 text-xl text-blue-300">
+  Sonra bulduklarını <code>memory-bank/activeContext.md</code>'ye ekle.
+</div>
+
+<!--
+Meydan okuma net ve somut olsun.
+-->
+
+---
+layout: two-cols
+---
+
+# 3 Çıkarım
+
+<v-clicks>
+
+1. **Önce dokümantasyon** — Feature geliştirmeden önce memory bank'ini kur
+2. **AI'a az ver** — Cerrahi erişim, tüm dosyaları dökmekten iyidir
+3. **Bilginin sahibi ol** — Tek bir araca bağımlı olma
+
+</v-clicks>
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full gap-4">
+  <div class="text-5xl font-black text-blue-400">EPAM</div>
+  <div class="text-gray-400 text-center text-lg">Bizimle çalışmak ister misin?</div>
+  <div class="text-sm text-gray-500 text-center mt-2">epam.com/careers</div>
+</div>
+
+<!--
+Çıkarımları yavaş aç — her biri bir tık.
+EPAM kısmı ince tutulsun, zorlamadan.
+-->
+
+---
+layout: end
+---
+
+# Teşekkürler!
+
+<div class="grid grid-cols-2 gap-8 mt-8 text-center">
+  <div>
+    <div class="text-sm text-gray-400 mb-2">İletişim</div>
+    <div class="font-mono text-blue-300">@gokhanozdemir</div>
+    <div class="text-sm text-gray-500 mt-1">LinkedIn · GitHub</div>
+  </div>
+  <div>
+    <div class="text-sm text-gray-400 mb-2">Workshop Repo</div>
+    <div class="font-mono text-blue-300 text-sm">github.com/[handle]/datadays2026-workshop</div>
+  </div>
+</div>
+
+<!--
+Soruları bekle. Repo linkini tekrar paylaş — QR kodu göster.
+-->

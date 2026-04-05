@@ -1,0 +1,9 @@
+datadays2026-workshop/
+├── memory-bank/
+│   ├── projectBrief.md
+│   ├── techContext.md
+│   ├── activeContext.md
+│   └── systemPatterns.md
+├── mlflow/          ← mlflow repo'nun klonu
+└── .opencode/
+    └── config.json  ← memory-bank/ + jCodeMunch MCP ayarları
